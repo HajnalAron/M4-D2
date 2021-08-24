@@ -1,13 +1,12 @@
-import books from "../data/romance.json"
 import {Card, Col, ListGroup, ListGroupItem} from 'react-bootstrap'
 
 
-function LatestRealease () {
+function LatestRealease ({books}) {
     return (
         <div className="container">
             <div className="row">
                 {books.map(book=>(
-                <Col className="my-3" xs={3}>
+                <Col key={book.asin} className="my-3" xs={3}>
                     <Card className="mx-3 w-100 h-100">
                     <Card.Img variant="top" src={book.img} />
                     <Card.Body>
